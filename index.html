@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnyxUser</title>
+    <link href="style.css" rel="stylesheet"> <!-- Vincula el archivo CSS -->
+    <script>
+      function verificarNumero() {
+        // Obtener el número ingresado
+        var numero = document.getElementById('username').value;
+        
+        // Verificar si el número es correcto
+        if (numero === '981255251') {
+          // Mostrar el dashboard y contenido de códigos
+          document.getElementById('dashboard').style.display = 'block';
+          document.getElementById('login-container').style.display = 'none'; // Ocultar el formulario de login
+        } else {
+          // Si el número es incorrecto, mostrar un mensaje de error
+          alert("Número incorrecto. Intenta nuevamente.");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Cuadro de fondo negro -->
+    <div class="fondo-cuadro-negro">
+      <!-- Contenedor principal -->
+      <h2>Web Seller</h2>
+      <main>
+        <h3>ACCESO A CÓDIGOS</h3>
+        <p>Soporte <a href="https://wa.me/963541766" target="_blank" rel="noopener noreferrer">Contacto Seller</a></p>
+
+        <!-- Formulario de login -->
+        <div class="login-container" id="login-container">
+          <form onsubmit="event.preventDefault(); verificarNumero();">
+            <div class="input-group">
+              <input type="text" id="username" placeholder="Usuario" required>
+            </div>
+            <div class="input-group">
+              <input type="password" id="password" placeholder="Contraseña" required>
+            </div>
+            <button type="submit">Iniciar sesión</button>
+          </form>
+        </div>
+
+        <!-- Contenedor del Dashboard (invisible hasta que se ingrese el número correcto) -->
+        <div id="dashboard" style="display: none;">
+          <h3>Bienvenido al Dashboard</h3>
+          <p>Acceso completo al sistema.</p>
+
+          <!-- Sección de "Login de Códigos" -->
+          <div id="login-codigos">
+            <h4>Login de Códigos</h4>
+            <form action="#">
+              <div class="input-group">
+                <input type="text" id="codigo" placeholder="Ingrese el código" required>
+              </div>
+              <button type="submit">Acceder</button>
+            </form>
+          </div>
+
+          <!-- Puedes agregar más contenido aquí si es necesario -->
+        </div>
+
+      </main>
+    </div>
+  </body>
+</html>
